@@ -1,0 +1,2 @@
+#!/bin/sh
+docker build --build-arg LATEST=$(curl -sL "https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/" | grep -o ">sonar-scanner-cli-2.*.zip" | tail -n 1 | grep -o "sonar.*.zip" | sed 's/.zip//g') -t sonnb-scanner .
