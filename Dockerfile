@@ -17,5 +17,6 @@ ENV SONAR_RUNNER_HOME=/root/sonar-home
 ENV PATH="${SONAR_RUNNER_HOME}/bin:${PATH}"
 
 CMD echo (ls /root/$LATEST/bin)
-CMD sonar-scanner -Dsonar.projectBaseDir=./src
+WORKDIR /root/src
+CMD sonar-scanner
 
